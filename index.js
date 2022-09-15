@@ -66,6 +66,9 @@ const doValidation = (arr) => {
        //   console.log( arr[i]["payername"]);
           flag =0;
       }
+      else if(arr[i]["amt"].length>14){
+        flag=0;
+      }
       else if(arr[i]["amt"].length<14){
        // console.log(arr[i]["amt"]);
         let value = arr[i]["amt"].split(".");
@@ -76,6 +79,7 @@ const doValidation = (arr) => {
           flag =0;
         }
       }
+      
 
       if(flag==0){
         fail.push(arr[i]);
@@ -84,6 +88,9 @@ const doValidation = (arr) => {
         pass.push(arr[i]);
       }
 
+    }
+    else{
+      fail.push(arr[i]);
     }
     //console.log(arr[i]["amt"].length<14);
     //console.log(arr[i]["id"]);
